@@ -1,0 +1,132 @@
+.message-input {
+  background: rgba(36, 43, 61, 0.8);
+  border-top: 1px solid var(--color-border);
+  padding: var(--spacing-xl);
+  backdrop-filter: blur(10px);
+}
+
+.message-form {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.input-container {
+  position: relative;
+  background: rgba(26, 31, 46, 0.8);
+  border: 2px solid var(--color-border);
+  border-radius: 25px;
+  transition: border-color 0.3s ease;
+}
+
+.input-container:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.2);
+}
+
+.message-textarea {
+  width: 100%;
+  min-height: 50px;
+  max-height: 120px;
+  padding: var(--spacing-lg) 60px var(--spacing-lg) var(--spacing-xl);
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f9fafb;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  resize: none;
+  padding: 0.5rem 1rem;
+  min-height: 20px;
+  max-height: 120px;
+  overflow-y: auto;
+  font-family: inherit;
+}
+
+.message-textarea::placeholder {
+  color: #9ca3af;
+}
+
+.message-textarea:disabled {
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.send-button {
+  position: absolute;
+  right: var(--spacing-sm);
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
+}
+
+.send-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  transform: scale(1.05);
+}
+
+.send-button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.send-button:disabled {
+  background: #374151;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.send-icon, .sending-indicator {
+  font-size: 1.1rem;
+  color: #1a202c;
+}
+
+.send-button:disabled .send-icon,
+.send-button:disabled .sending-indicator {
+  color: #6b7280;
+}
+
+.sending-indicator {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Auto-resize textarea */
+.message-textarea {
+  overflow: hidden;
+}
+
+/* Scrollbar for textarea */
+.message-textarea::-webkit-scrollbar {
+  width: 4px;
+}
+
+.message-textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.message-textarea::-webkit-scrollbar-thumb {
+  background: #6b7280;
+  border-radius: 2px;
+}
+
+.message-textarea::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
